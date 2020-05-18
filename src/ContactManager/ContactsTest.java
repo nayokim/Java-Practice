@@ -6,12 +6,7 @@ public class ContactsTest {
     public static void main(String[] args) {
         boolean running = true;
         do {
-            System.out.println("1. View contacts.\n" +
-                    "2. Add a new contact.\n" +
-                    "3. Search a contact by name.\n" +
-                    "4. Delete an existing contact.\n" +
-                    "5. Exit.\n" +
-                    "Enter an option (1, 2, 3, 4 or 5):");
+            System.out.println(displayMenu());
             Scanner scanner = new Scanner(System.in);
             int userInput = Integer.parseInt(scanner.nextLine());
 
@@ -21,9 +16,11 @@ public class ContactsTest {
                 if (exitConfirmation.equals("y")) {
                     System.out.println("Have a good day!");
                     System.exit(0);
+                } else {
+                    displayMenu();
                 }
             }
-        } while (running) ;
+        } while (running);
 
 
 //            if (userInput == 1){
@@ -43,5 +40,14 @@ public class ContactsTest {
 //            }
 
 
+        }
+        private static String displayMenu(){
+            String choices = "1. View contacts.\n" +
+                    "2. Add a new contact.\n" +
+                    "3. Search a contact by name.\n" +
+                    "4. Delete an existing contact.\n" +
+                    "5. Exit.\n" +
+                    "Enter an option (1, 2, 3, 4 or 5):";
+            return choices;
         }
     }
